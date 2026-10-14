@@ -17,9 +17,10 @@
 <header style="position:fixed;top:0;left:0;right:0;z-index:20;background:rgba(22,22,23,.8);backdrop-filter:saturate(180%) blur(20px);opacity:{{ hdrOp }};transform:translateY({{ hdrY }});pointer-events:{{ hdrPe }};transition:opacity .6s ease,transform .6s ease">
 <div style="max-width:1240px;margin:0 auto;padding:0 22px;min-height:52px;display:flex;align-items:center;justify-content:space-between;gap:20px">
 <div style="display:flex;align-items:center;gap:8px;font-family:'Josefin Sans',sans-serif;font-size:20px;font-weight:700;letter-spacing:-.5px;color:#f5f5f7"><img src="uploads/logo-cronos-dark.png" alt="studiocronos" style="height:40px;width:auto;display:block"></div>
-<nav style="display:flex;gap:clamp(12px,1.8vw,24px);font-size:12px;letter-spacing:0;flex-wrap:wrap;justify-content:center"><a href="#hgSec" style="color:#d2d2d7;white-space:nowrap" style-hover="color:#fff">Sobre nós</a><a href="#servicos" style="color:#d2d2d7;white-space:nowrap" style-hover="color:#fff">Serviços</a><a href="#processo" style="color:#d2d2d7;white-space:nowrap" style-hover="color:#fff">Como funciona</a><a href="#estudio" style="color:#d2d2d7;white-space:nowrap" style-hover="color:#fff">O estúdio</a><a href="#curso" style="color:#d2d2d7;white-space:nowrap" style-hover="color:#fff">Curso</a><a href="#contato" style="color:#d2d2d7;white-space:nowrap" style-hover="color:#fff">Contato</a></nav>
-<a href="https://wa.me/5511980317204" style="background:#F20530;color:#fff;padding:5px 13px;border-radius:980px;font-size:12px" style-hover="background:#ff3a5c;color:#fff">Agendar</a>
+<nav style="display:{{ navD }};gap:clamp(12px,1.8vw,24px);font-size:12px;letter-spacing:0;flex-wrap:wrap;justify-content:center"><a href="#hgSec" style="color:#d2d2d7;white-space:nowrap" style-hover="color:#fff">Sobre nós</a><a href="#servicos" style="color:#d2d2d7;white-space:nowrap" style-hover="color:#fff">Serviços</a><a href="#processo" style="color:#d2d2d7;white-space:nowrap" style-hover="color:#fff">Como funciona</a><a href="#estudio" style="color:#d2d2d7;white-space:nowrap" style-hover="color:#fff">O estúdio</a><a href="#curso" style="color:#d2d2d7;white-space:nowrap" style-hover="color:#fff">Curso</a><a href="#contato" style="color:#d2d2d7;white-space:nowrap" style-hover="color:#fff">Contato</a></nav>
+<a href="https://wa.me/5511980317204" style="display:{{ ctaD }};background:#F20530;color:#fff;padding:5px 13px;border-radius:980px;font-size:12px" style-hover="background:#ff3a5c;color:#fff">Agendar</a><button onClick="{{ toggleMenu }}" aria-label="Menu" style="display:{{ burgD }};width:44px;height:44px;align-items:center;justify-content:center;background:none;border:0;padding:0;cursor:pointer;color:#f5f5f7"><svg width="20" height="14" viewBox="0 0 20 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="{{ burgPath }}"></path></svg></button>
 </div></header>
+<sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}"><div style="position:fixed;top:52px;left:0;right:0;bottom:0;z-index:29;background:rgba(0,0,0,.94);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);padding:24px 20px;box-sizing:border-box;display:flex;flex-direction:column;gap:4px;overflow-y:auto"><a href="#hgSec" onClick="{{ closeMenu }}" style="color:#f5f5f7;font-size:24px;font-weight:600;letter-spacing:-.01em;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.1)" style-hover="color:#fff">Sobre nós</a><a href="#servicos" onClick="{{ closeMenu }}" style="color:#f5f5f7;font-size:24px;font-weight:600;letter-spacing:-.01em;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.1)" style-hover="color:#fff">Serviços</a><a href="#processo" onClick="{{ closeMenu }}" style="color:#f5f5f7;font-size:24px;font-weight:600;letter-spacing:-.01em;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.1)" style-hover="color:#fff">Como funciona</a><a href="#estudio" onClick="{{ closeMenu }}" style="color:#f5f5f7;font-size:24px;font-weight:600;letter-spacing:-.01em;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.1)" style-hover="color:#fff">O estúdio</a><a href="#curso" onClick="{{ closeMenu }}" style="color:#f5f5f7;font-size:24px;font-weight:600;letter-spacing:-.01em;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.1)" style-hover="color:#fff">Curso</a><a href="#contato" onClick="{{ closeMenu }}" style="color:#f5f5f7;font-size:24px;font-weight:600;letter-spacing:-.01em;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.1)" style-hover="color:#fff">Contato</a><a href="https://wa.me/5511980317204" style="margin-top:24px;align-self:flex-start;background:#F20530;color:#fff;padding:14px 28px;border-radius:980px;font-size:17px" style-hover="background:#ff3a5c;color:#fff">Agendar</a></div></sc-if>
 
 <section style="position:relative;height:100svh;min-height:680px;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#050505;isolation:isolate">
 <video id="heroVideo" src="github-videos/uploads/hero-silent.mp4" autoplay="" muted="" loop="" playsinline="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0"></video>
@@ -40,13 +41,13 @@
 <video src="github-videos/uploads/hourglass3.mp4" autoplay="" muted="" loop="" playsinline="" disablepictureinpicture="" aria-hidden="true" style="pointer-events:none;position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;transform:scale(1.4)"></video>
 <div style="position:absolute;left:0;right:0;top:-1px;height:421px;z-index:3;pointer-events:none;background:linear-gradient(180deg,rgba(168,8,31,1) 0,rgba(166,8,31,.97) 40px,rgba(150,7,28,.86) 100px,rgba(120,6,23,.66) 170px,rgba(84,4,16,.42) 250px,rgba(42,2,8,.18) 330px,rgba(0,0,0,0) 420px)"></div>
 <div style="position:absolute;inset:0;z-index:1;background:rgba(0,0,0,.4)"></div>
-<div id="hgGlass" style="position:absolute;top:10%;left:10%;right:10%;bottom:10%;z-index:2;border-radius:36px;overflow:hidden;border:1px solid rgba(255,255,255,.22);box-shadow:inset 0 1px 0 rgba(255,255,255,.28),0 30px 90px rgba(0,0,0,.4)">
+<div id="hgGlass" style="position:absolute;top:10%;bottom:10%;left:clamp(20px,calc(10vw - 16px),10%);right:clamp(20px,calc(10vw - 16px),10%);z-index:2;border-radius:36px;overflow:hidden;border:1px solid rgba(255,255,255,.22);box-shadow:inset 0 1px 0 rgba(255,255,255,.28),0 30px 90px rgba(0,0,0,.4)">
 <div style="position:absolute;top:-12.5%;left:-12.5%;width:125%;height:125%"><video src="github-videos/uploads/hourglass3.mp4" autoplay="" muted="" loop="" playsinline="" disablepictureinpicture="" aria-hidden="true" style="pointer-events:none;position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:blur(2.5px) saturate(115%);transform:scale(1.4)"></video></div>
 <div style="position:absolute;inset:0;background:linear-gradient(160deg,rgba(255,255,255,.06),rgba(0,0,0,.35) 45%,rgba(0,0,0,.45))"></div>
 <div style="position:relative;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;text-align:center;padding:40px clamp(24px,6vw,96px);box-sizing:border-box">
 <div style="font-weight:600;font-size:21px;color:#F20530">Sobre nós</div>
 <h2 style="font-weight:600;letter-spacing:-.015em;line-height:1.07;margin:0;font-size:clamp(32px,4.6vw,56px);color:#f5f5f7;max-width:820px">Aqui, cada veículo recebe o tempo que ele precisa.</h2>
-<p style="font-size: clamp(17px,1.5vw,21px); line-height: 1.5; color: rgba(245,245,247,.86); margin: 0; font-weight: 500; max-width: 660px; width: 660px"><span style="white-space: normal;">Cronos, na mitologia grega, é o deus do tempo. Escolhemos esse nome para lembrar o que guia cada trabalho que sai daqui.&nbsp;<br></span><br>Um polimento ou uma vitrificação só ficam bons quando cada etapa acontece no ritmo certo, e é por isso que o nosso trabalho não tem pressa. Respeitamos o tempo do seu carro e o tempo que você tem para ele.</p>
+<p style="width:100%;box-sizing:border-box;font-size: clamp(17px,1.5vw,21px); line-height: 1.5; color: rgba(245,245,247,.86); margin: 0; font-weight: 500; max-width: 660px; width: 660px"><span style="white-space: normal;">Cronos, na mitologia grega, é o deus do tempo. Escolhemos esse nome para lembrar o que guia cada trabalho que sai daqui.&nbsp;<br></span><br>Um polimento ou uma vitrificação só ficam bons quando cada etapa acontece no ritmo certo, e é por isso que o nosso trabalho não tem pressa. Respeitamos o tempo do seu carro e o tempo que você tem para ele.</p>
 </div></div>
 </section>
 
@@ -116,6 +117,7 @@
 class Component extends DCLogic {
   state = { ba: 50, open: 0, hdr: false, proc: false, tab: "S", rs: {}, speed: 1 };
   componentDidMount() {
+    this._mobInit();
     const on = e => {
       const tg = e && e.target && e.target !== document && e.target.scrollTop !== undefined ? e.target : null;
       const y = tg ? tg.scrollTop : (window.scrollY || document.documentElement.scrollTop || 0);
@@ -185,8 +187,11 @@ class Component extends DCLogic {
     }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
     els.forEach(el => this._rio.observe(el));
   }
-  componentWillUnmount() { this._rio && this._rio.disconnect(); this._svg && this._svg.remove(); this._mo && this._mo.disconnect(); cancelAnimationFrame(this._hg); cancelAnimationFrame(this._raf); }
+  componentWillUnmount() { window.removeEventListener('resize', this._onRs); this._rio && this._rio.disconnect(); this._svg && this._svg.remove(); this._mo && this._mo.disconnect(); cancelAnimationFrame(this._hg); cancelAnimationFrame(this._raf); }
   rail(k) { const r = this.state.rs[k] || [true, false]; const go = d => { const el = document.getElementById(k + 'Rail'); if (el) { const c = el.firstElementChild; el.scrollBy({ left: d * (c.getBoundingClientRect().width + 20), behavior: 'smooth' }); } }; return { [k + 'Prev']: () => go(-1), [k + 'Next']: () => go(1), [k + 'PrevOp']: r[0] ? 0.3 : 1, [k + 'NextOp']: r[1] ? 0.3 : 1 }; }
+
+  _mobInit() { this._onRs = () => this.forceUpdate(); window.addEventListener('resize', this._onRs); }
+  _mobVals() { const mob = window.innerWidth < 820, o = !!(this.state && this.state.menu) && mob; return { navD: mob ? 'none' : 'flex', ctaD: mob ? 'none' : 'inline-block', burgD: mob ? 'flex' : 'none', menuOpen: o, burgPath: o ? 'M3 1l14 12M17 1L3 13' : 'M1 1h18M1 7h18M1 13h18', toggleMenu: () => this.setState(s => ({ menu: !s.menu })), closeMenu: () => this.setState({ menu: false }) }; }
   renderVals() {
     const FS = [
       ['Vocês atendem quais marcas?', 'Todas. Trabalhamos com carros nacionais, importados, clássicos e motos.'],
@@ -204,7 +209,7 @@ class Component extends DCLogic {
       ['O que está incluso?', 'Aulas práticas e teóricas, certificado, café da manhã e suporte para dúvidas depois do curso, sem custo.']
     ];
     const faq = (this.state.tab === 'S' ? FS : FC).map((x, k) => ({ q: x[0], a: x[1], sign: this.state.open === k ? '–' : '+', display: this.state.open === k ? 'block' : 'none', toggle: () => this.setState({ open: this.state.open === k ? -1 : k }) }));
-    return {
+    return { ...this._mobVals(),
       pOp: this.state.proc ? 1 : 0, pTf: this.state.proc ? 'none' : 'translateY(44px)', hdrOp: this.state.hdr ? 1 : 0,
       speeds: [0.75, 1, 1.25, 1.5, 2].map(r => ({ label: String(r).replace('.', ',') + 'x', bg: this.state.speed === r ? '#1d1d1f' : '#e8e8ed', fg: this.state.speed === r ? '#fff' : '#1d1d1f', set: () => { const v = document.getElementById('cursoVid'); if (v) v.playbackRate = r; this.setState({ speed: r }); } })),
       ...this.rail('svc'), ...this.rail('est'),

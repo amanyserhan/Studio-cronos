@@ -15,11 +15,12 @@
 <div style="font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Inter',sans-serif;color:#f5f5f7;background:#000;overflow-x:hidden;-webkit-font-smoothing:antialiased">
 
 <header style="position:fixed;top:0;left:0;right:0;z-index:30;background:rgba(0,0,0,.72);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(255,255,255,.08)">
-<div style="max-width:1240px;margin:0 auto;padding:0 22px;min-height:52px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap">
+<div style="max-width:1240px;margin:0 auto;padding:0 22px;min-height:52px;display:flex;align-items:center;justify-content:space-between;gap:20px">
 <a href="index.html" style="display:flex;align-items:center;gap:12px;color:#86868b;font-size:13px;white-space:nowrap" style-hover="color:#d2d2d7"><img src="uploads/logo-cronos-dark.png" alt="Studio Cronos" style="height:34px;width:auto;display:block"><span>Curso de estética automotiva</span></a>
-<nav style="display:flex;gap:24px;font-size:12px;flex-wrap:wrap"><a href="#visao" style="color:#d2d2d7" style-hover="color:#fff">Visão geral</a><a href="#aprende" style="color:#d2d2d7" style-hover="color:#fff">O que você aprende</a><a href="#investimento" style="color:#d2d2d7" style-hover="color:#fff">Investimento</a><a href="#duvidas" style="color:#d2d2d7" style-hover="color:#fff">Dúvidas</a></nav>
-<a href="https://wa.me/5511980317204?text=Oi%2C%20vi%20a%20p%C3%A1gina%20do%20curso%20de%20est%C3%A9tica%20automotiva%20e%20quero%20saber%20das%20pr%C3%B3ximas%20turmas." target="_blank" style="background:#F20530;color:#fff;padding:6px 14px;border-radius:980px;font-size:12px;white-space:nowrap" style-hover="background:#ff3a5c;color:#fff">Falar pelo WhatsApp</a>
+<nav style="display:{{ navD }};gap:24px;font-size:12px;flex-wrap:wrap"><a href="#visao" style="color:#d2d2d7" style-hover="color:#fff">Visão geral</a><a href="#aprende" style="color:#d2d2d7" style-hover="color:#fff">O que você aprende</a><a href="#investimento" style="color:#d2d2d7" style-hover="color:#fff">Investimento</a><a href="#duvidas" style="color:#d2d2d7" style-hover="color:#fff">Dúvidas</a></nav>
+<a href="https://wa.me/5511980317204?text=Oi%2C%20vi%20a%20p%C3%A1gina%20do%20curso%20de%20est%C3%A9tica%20automotiva%20e%20quero%20saber%20das%20pr%C3%B3ximas%20turmas." target="_blank" style="display:{{ ctaD }};background:#F20530;color:#fff;padding:6px 14px;border-radius:980px;font-size:12px;white-space:nowrap" style-hover="background:#ff3a5c;color:#fff">Falar pelo WhatsApp</a><button onClick="{{ toggleMenu }}" aria-label="Menu" style="display:{{ burgD }};width:44px;height:44px;align-items:center;justify-content:center;background:none;border:0;padding:0;cursor:pointer;color:#f5f5f7"><svg width="20" height="14" viewBox="0 0 20 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="{{ burgPath }}"></path></svg></button>
 </div></header>
+<sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}"><div style="position:fixed;top:52px;left:0;right:0;bottom:0;z-index:29;background:rgba(0,0,0,.94);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);padding:24px 20px;box-sizing:border-box;display:flex;flex-direction:column;gap:4px;overflow-y:auto"><a href="#visao" onClick="{{ closeMenu }}" style="color:#f5f5f7;font-size:24px;font-weight:600;letter-spacing:-.01em;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.1)" style-hover="color:#fff">Visão geral</a><a href="#aprende" onClick="{{ closeMenu }}" style="color:#f5f5f7;font-size:24px;font-weight:600;letter-spacing:-.01em;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.1)" style-hover="color:#fff">O que você aprende</a><a href="#investimento" onClick="{{ closeMenu }}" style="color:#f5f5f7;font-size:24px;font-weight:600;letter-spacing:-.01em;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.1)" style-hover="color:#fff">Investimento</a><a href="#duvidas" onClick="{{ closeMenu }}" style="color:#f5f5f7;font-size:24px;font-weight:600;letter-spacing:-.01em;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.1)" style-hover="color:#fff">Dúvidas</a><a href="https://wa.me/5511980317204?text=Oi%2C%20vi%20a%20p%C3%A1gina%20do%20curso%20de%20est%C3%A9tica%20automotiva%20e%20quero%20saber%20das%20pr%C3%B3ximas%20turmas." target="_blank" style="margin-top:24px;align-self:flex-start;background:#F20530;color:#fff;padding:14px 28px;border-radius:980px;font-size:17px" style-hover="background:#ff3a5c;color:#fff">Falar pelo WhatsApp</a></div></sc-if>
 
 <section id="visao" style="position:relative;height:100svh;min-height:700px;overflow:hidden;background:#000;display:flex;align-items:flex-end">
 <video src="github-videos/uploads/curso-hero.mp4" autoplay="" muted="" loop="" playsinline="" disablepictureinpicture="" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none"></video>
@@ -39,7 +40,7 @@
 <video src="github-videos/uploads/curso-glass.mp4" autoplay="" muted="" loop="" playsinline="" disablepictureinpicture="" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;transform:scale(1.4);pointer-events:none"></video>
 <div style="position:absolute;inset:0;z-index:1;background:rgba(0,0,0,.4)"></div>
 <div style="position:absolute;left:0;right:0;top:0;height:200px;z-index:1;background:linear-gradient(180deg,#000,rgba(0,0,0,0))"></div><div style="position:absolute;left:0;right:0;top:-1px;height:calc(5vw + 1px);background:#000;clip-path:polygon(0 0,100% 0,100% 100%);pointer-events:none;z-index:3"></div>
-<div style="position:absolute;top:10%;left:10%;right:10%;bottom:10%;z-index:2;border-radius:36px;overflow:hidden;border:1px solid rgba(255,255,255,.22);box-shadow:inset 0 1px 0 rgba(255,255,255,.28),0 30px 90px rgba(0,0,0,.4)">
+<div style="position:absolute;top:10%;bottom:10%;left:clamp(20px,calc(10vw - 16px),10%);right:clamp(20px,calc(10vw - 16px),10%);z-index:2;border-radius:36px;overflow:hidden;border:1px solid rgba(255,255,255,.22);box-shadow:inset 0 1px 0 rgba(255,255,255,.28),0 30px 90px rgba(0,0,0,.4)">
 <div style="position:absolute;top:-12.5%;left:-12.5%;width:125%;height:125%"><video src="github-videos/uploads/curso-glass.mp4" autoplay="" muted="" loop="" playsinline="" disablepictureinpicture="" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:blur(2.5px) saturate(115%);transform:scale(1.4);pointer-events:none"></video></div>
 <div style="position:absolute;inset:0;background:linear-gradient(160deg,rgba(255,255,255,.06),rgba(0,0,0,.35) 45%,rgba(0,0,0,.45))"></div>
 <div style="position:relative;height:100%;max-width:980px;margin:0 auto;display:flex;flex-direction:column;justify-content:center;gap:40px;padding:40px clamp(24px,6vw,96px);box-sizing:border-box">
@@ -94,7 +95,7 @@
 <div style="position:relative;max-width:820px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:24px">
 <div style="font-size:21px;font-weight:600;color:#F20530">Investimento</div>
 <div data-rv="1" style="font-weight:700;font-size:clamp(72px,12vw,160px);letter-spacing:-.04em;line-height:1;color:#f5f5f7">R$ 1.300</div>
-<p data-rv="1" style="margin:0;font-size:clamp(13px,1.3vw,16px);line-height:1.5;color:#a1a1a6;white-space:nowrap">Trabalhamos com todas as formas de pagamento: Pix, cartão ou boleto.</p>
+<p data-rv="1" style="margin:0;font-size:clamp(14px,1.3vw,16px);line-height:1.5;color:#a1a1a6;text-align:center;max-width:100%">Trabalhamos com todas as formas de pagamento: Pix, cartão ou boleto.</p>
 <a href="https://wa.me/5511980317204?text=Oi%2C%20vi%20a%20p%C3%A1gina%20do%20curso%20de%20est%C3%A9tica%20automotiva%20e%20quero%20saber%20das%20pr%C3%B3ximas%20turmas." target="_blank" style="margin-top:16px;background:#F20530;color:#fff;padding:16px 36px;border-radius:980px;font-size:19px" style-hover="background:#ff3a5c;color:#fff">Falar pelo WhatsApp</a>
 </div></section>
 
@@ -131,6 +132,7 @@
 class Component extends DCLogic {
   state = { open: 0, vid: false };
   componentDidMount() {
+    this._mobInit();
     document.querySelectorAll('video[aria-hidden]').forEach(v => { v.loop = true; v.addEventListener('ended', () => { v.currentTime = 0; v.play().catch(() => {}); }); v.addEventListener('pause', () => { if (!document.hidden) v.play().catch(() => {}); }); v.muted = true; v.defaultMuted = true; v.volume = 0; v.addEventListener('volumechange', () => { v.muted = true; v.volume = 0; }); const p = v.play(); if (p && p.catch) p.catch(() => {}); });
     if (!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     const els = [...document.querySelectorAll('[data-rv]')];
@@ -142,7 +144,10 @@ class Component extends DCLogic {
     }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
     els.forEach(el => this._io.observe(el));
   }
-  componentWillUnmount() { this._io && this._io.disconnect(); }
+  componentWillUnmount() { window.removeEventListener('resize', this._onRs); this._io && this._io.disconnect(); }
+
+  _mobInit() { this._onRs = () => this.forceUpdate(); window.addEventListener('resize', this._onRs); }
+  _mobVals() { const mob = window.innerWidth < 820, o = !!(this.state && this.state.menu) && mob; return { navD: mob ? 'none' : 'flex', ctaD: mob ? 'none' : 'inline-block', burgD: mob ? 'flex' : 'none', menuOpen: o, burgPath: o ? 'M3 1l14 12M17 1L3 13' : 'M1 1h18M1 7h18M1 13h18', toggleMenu: () => this.setState(s => ({ menu: !s.menu })), closeMenu: () => this.setState({ menu: false }) }; }
   renderVals() {
     const img = id => 'url(uploads/pasted-' + id + '-0.png)';
     const FAQ = [
@@ -151,7 +156,7 @@ class Component extends DCLogic {
       ['O curso tem certificado?', 'Sim, entregue ao final.'],
       ['O que vou aprender?', 'Higienização, lavagem, descontaminação, polimento técnico, proteção (cera, selante e vitrificador) e limpeza de motor. De bônus, remoção de chuva ácida e de cristalização dos vidros.']
     ];
-    return {
+    return { ...this._mobVals(),
       vidOpen: this.state.vid,
       openVid: () => this.setState({ vid: true }),
       closeVid: () => this.setState({ vid: false }),
